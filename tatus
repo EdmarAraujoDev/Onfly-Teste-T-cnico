@@ -1,0 +1,20 @@
+[33mcommit 8eafbb3ff6b724f547c31832f3ae9640c1d012d9[m
+Author: Edmar Araújo <edmar.junioraraujo@gmail.com>
+Date:   Thu Nov 12 21:03:23 2026 +0000
+
+    chore: organize project structure
+
+[1mdiff --git a/src/onfly_report/services/status_policy.py b/src/onfly_report/services/status_policy.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..db47523[m
+[1m--- /dev/null[m
+[1m+++ b/src/onfly_report/services/status_policy.py[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m"""Política de status das reservas."""[m
+[32m+[m
+[32m+[m[32mfrom __future__ import annotations[m
+[32m+[m
+[32m+[m
+[32m+[m[32mdef is_billable(status: str) -> bool:[m
+[32m+[m[32m    """Indica se a reserva entra nos totais financeiros e de noites."""[m
+[32m+[m[32m    return status != "CANCELLED"[m
