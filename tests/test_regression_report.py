@@ -33,3 +33,14 @@ def test_regression_report_on_sample(tmp_path):
         "total_amount_brl": "1542.00",
         "average_nightly_rate_brl": "308.40",
     }
+
+def test_reads_more_than_200_reservations(tmp_path):
+    
+    rows = [
+        {"reservation_id": f"R-{i}"}
+        for i in range(250)
+    ]
+
+    report = run_cli(tmp_path, rows)
+
+    assert report["summary"]["total_reservations"] == 250
